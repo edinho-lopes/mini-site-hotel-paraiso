@@ -1,0 +1,220 @@
+*{
+    margin: 0; /* define o espaço exterior entre os elemento*/
+    padding: 0;
+    font-size: 100%;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+nav, ul{ /*A vírgula faz com que pegue em cada item isolado*/
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+/*HEADER*/
+header {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    display: flex; /*Pra iniciar o flexbox e colocar lado a lado*/
+    justify-content: space-between; /*vai jogar o primeiro item pra esquerda e o outro direita*/
+    align-items: center;
+    padding: 20px 50px;
+}
+
+header nav {
+    display: flex;
+}
+
+header nav li a{
+    color: #191c03 ;
+}
+a:hover {
+    color: rgb(60, 224, 48);
+}
+
+header nav li {
+    margin: 0 15px;
+}
+
+header nav li:first-child {/*Selecionando o primeiro filho da lista*/
+    margin-left: 0;
+}
+
+header nav li:last-child { /*Selecionando o ULTIMO filho da lista*/
+    margin-right: 0;
+}
+
+header img {
+    width: 250px;
+}
+.imagem:hover {
+    background-color: rgb(235, 243, 231);;
+}
+
+@media (max-width: 700px){ /*Quando a largura maxima chegar a 70px, execute o código a baixo*/
+   header{
+    flex-direction: column; /*selecione o read e coloque os itens em coluna*/
+}
+   header {
+    margin-bottom: 15px; /*der uma margem na parte de baixo com 15px*/
+   }
+}
+
+/*PARTE PRINCIPAL*/
+
+.hero {
+    background-image: url(../IMG/paisagem03.jpg);
+    background-size: cover; /*Vai ajustar a imagem com o elemento pai*/
+    min-height: 100vh; /*altura minima de 100%*/
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /*direção coluna*/
+}
+.hero h1 {
+    font-size: 3.2rem;
+    margin-bottom: 15px;
+}
+.hero h3{
+    font-size:2rem;
+    margin-bottom: 15px;
+}
+.hero .btn {
+    background-color: #fff;
+    border-radius: 4px;
+    color: #191c03;
+    padding: 20px 50px;
+    text-transform: uppercase;
+}
+
+@media (max-width: 700px){
+    .hero h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    }
+    .hero h3 {
+    font-size: 1.5rem;
+    text-align: center;
+}
+}
+
+/*CONHEÇA O HOTEL*/
+.conheca-o-hotel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 50px;
+}
+.conheca-o-hotel h3{
+    font-size: 2rem;
+    margin-bottom: 35px;
+    color: #191c03;
+    text-align: center;
+}
+.conheca-o-hotel p{
+    max-width: 800px;
+    margin-bottom: 35px;
+    color: #191c03;
+    text-align: center;
+}
+.conheca-o-hotel hr {
+    width: 200px;
+    height: 2px;
+    background-color: #191c03;
+    margin-bottom: 70px;
+    border: none;
+}
+.conheca-o-hotel .grid {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.conheca-o-hotel .grid li{
+    height: 350px; 
+    padding: 20px;
+    border-radius: 4px;
+    background-clip: content-box;
+    background-size: cover;
+    background-position: center;
+}
+.conheca-o-hotel .grid li.small{flex-basis: 40%;}
+.conheca-o-hotel .grid li.large{flex-basis: 60%;}
+
+@media (max-width: 700px){
+    .conheca-o-hotel .grid li.small,
+    .conheca-o-hotel .grid li.large {
+        flex-basis: 100%;
+    }
+}
+
+/*CARACTERISTICAS*/
+.caracteristicas {
+    background-color: #191c03;;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 50px;
+}
+.caracteristicas h3{
+    font-size: 2rem;
+    margin-bottom: 35px;
+    color: #fff;
+    text-align: center;
+}
+.caracteristicas p{
+    max-width: 800px;
+    margin-bottom: 35px;
+    color: #fff;
+    text-align: center;
+}
+.caracteristicas hr {
+    width: 200px;
+    height: 2px;
+    background-color: #fff;
+    margin-bottom: 70px;
+    border: none;
+}
+
+.caracteristicas .grid {width: 100%; display: flex;}
+.caracteristicas .grid li {padding: 0 30px; text-align: center;}
+.caracteristicas .grid li i{color: #c3c63b; font-size: 50px; margin-bottom: 30px;}
+.caracteristicas .grid li h4 {font-size: 1.5rem; color: #c3c63b; margin-bottom: 30px;}
+.caracteristicas .grid li p {
+    color: #fff;
+}
+
+@media(max-width: 850px) {
+    .caracteristicas .grid{flex-direction: column;}
+}
+
+/*NEWSLETTER*/
+
+.newslatter {display: flex; flex-direction: column; align-items: center;  padding:100px 50px;}
+
+.newslatter h3{font-size: 2rem; margin-bottom: 35px; color:#c3c63b; text-align: center;}
+.newslatter p{ max-width: 800px; margin-bottom: 35px; color: #c3c63b; text-align: center;}
+.newslatter hr { width: 200px; height: 2px; background-color: #c3c63b; margin-bottom: 70px;border: none;}
+.newslatter form{display: flex; align-items: center; justify-content: center; flex-wrap: wrap; width: 80%; max-width: 100%;}
+.newslatter input{padding: 15px; border:1px solid #c3c63b; border-radius: 4px; margin-right: 15px; flex: 1;}
+.newslatter button {padding: 15px; background-color: #c3c63b ; color: #fff; text-transform: uppercase; border: none; border-radius: 4px; cursor: pointer;}
+
+@media(max-width: 750px) {
+    .newslatter input {flex-basis: 100%; margin-bottom: 15px;}
+}
+
+/*FOOTER*/
+footer {display: flex; flex-direction: column;  background-color: #191c03; padding: 50px; align-items: center;}
+footer ul {display: flex; margin-bottom: 25px;}
+footer ul li {margin-right: 10px;}
+footer ul li:last-child{margin-right: 0;}
+footer ul li a {color: #c3c63b; font-size: 2rem; text-align: center;}
+footer p {color: #c3c63b; text-align: center;}
