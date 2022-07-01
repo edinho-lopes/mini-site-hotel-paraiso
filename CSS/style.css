@@ -9,6 +9,7 @@
 nav, ul{ /*A vírgula faz com que pegue em cada item isolado*/
     list-style: none;
 }
+/*testando*/
 a{
     text-decoration: none;
     cursor: pointer;
